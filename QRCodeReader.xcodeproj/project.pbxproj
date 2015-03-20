@@ -14,6 +14,7 @@
 		6E2F4FB91ABC83EF00D6546F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F4FB81ABC83EF00D6546F /* Images.xcassets */; };
 		6E2F4FBC1ABC83EF00D6546F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F4FBA1ABC83EF00D6546F /* LaunchScreen.xib */; };
 		6E2F4FC81ABC83F000D6546F /* QRCodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F4FC71ABC83F000D6546F /* QRCodeReaderTests.m */; };
+		6E2F4FD21ABCBF1100D6546F /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F4FD11ABCBF1100D6546F /* beep.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		6E2F4FC11ABC83F000D6546F /* QRCodeReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2F4FC61ABC83F000D6546F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2F4FC71ABC83F000D6546F /* QRCodeReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderTests.m; sourceTree = "<group>"; };
+		6E2F4FD11ABCBF1100D6546F /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = "Supporting Files/beep.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		6E2F4FAB1ABC83EF00D6546F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E2F4FD11ABCBF1100D6546F /* beep.mp3 */,
 				6E2F4FAC1ABC83EF00D6546F /* Info.plist */,
 				6E2F4FAD1ABC83EF00D6546F /* main.m */,
 			);
@@ -201,6 +204,7 @@
 			files = (
 				6E2F4FB71ABC83EF00D6546F /* Main.storyboard in Resources */,
 				6E2F4FBC1ABC83EF00D6546F /* LaunchScreen.xib in Resources */,
+				6E2F4FD21ABCBF1100D6546F /* beep.mp3 in Resources */,
 				6E2F4FB91ABC83EF00D6546F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

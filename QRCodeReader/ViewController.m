@@ -14,9 +14,11 @@
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 - (BOOL)startReading;
 - (void)stopReading;
+- (void)loadBeepSound;
 
 @end
 
@@ -26,8 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _isReading = NO;
-    
     _captureSession = nil;
+    [self loadBeepSound];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,6 +78,10 @@
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start" waitUntilDone:NO];
             _isReading = NO;
+            
+            if (_audioPlayer) {
+                [_audioPlayer play];
+            }
         }
     }
 }
@@ -85,6 +91,22 @@
     _captureSession = nil;
     [_videoPreviewLayer removeFromSuperlayer];
 }
+
+- (void)loadBeepSound {
+    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
+    NSURL *beepURL = [NSURL URLWithString:beepFilePath];
+    NSError *error;
+    
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:beepURL error:&error];
+    if (error) {
+        NSLog(@"Could not play beep file.");
+        NSLog(@"%@", [error localizedDescription]);
+    } else {
+        [_audioPlayer prepareToPlay];
+    }
+}
+
+
 
 
 - (IBAction)startStopReading:(id)sender {
